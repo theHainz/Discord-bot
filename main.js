@@ -3,54 +3,14 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const TOKEN = '';
 
-  let rng = Math.floor(Math.random() * 8);
-  let response = '';
-  
-  switch(rng){
-      case 1:
-      response.replace("cum");
-      break;
-  
-      case 2:
-      response.replace("The White Liquid?");
-      break;
-  
-      case 3:
-      response.replace("HE SAID THE WORD");
-      break;
-  
-      case 4:
-      response.replace("SIUUUU");
-      break;
-  
-      case 5:
-      response.replace("Milk");
-      break;
-  
-      case 6:
-      response.replace("Your Mother");
-      break;
-  
-      case 7:
-      response.replace("Gulp");
-      break;
-  
-      case 8:
-      response.replace("mmm... soup")
-      break;
-  
-      default:
-      response.replace("more cum");
-      break;
-  }
-
+import { response } from './botresponses';
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`)
 })
 
 client.on("message", msg => {
-  if (msg.content === "cum") {
+  if (msg.content === "lean") {
     msg.reply(response);
   }
 })
