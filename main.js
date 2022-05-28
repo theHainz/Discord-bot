@@ -3,15 +3,28 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const TOKEN = '';
 
-import { response } from './botresponses';
-
-client.on("ready", () => {
+ client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`)
 })
 
+
+const stringarray = [
+      'cum',
+      'The White Liquid?',
+      'HE SAID THE WORD',
+      'SIUUUU',
+      'Milk',
+      'Your Mother',
+      'Gulp',
+      'mmm... soup',
+      'more lean',
+];
+
+
 client.on("message", msg => {
-  if (msg.content === "lean") {
-    msg.reply(response);
+  if (msg.content === "cum") {
+    let randomNumber = Math.floor(Math.random()*stringarray.length);
+    msg.reply(stringarray[randomNumber]);
   }
 })
 
