@@ -9,7 +9,6 @@ const TOKEN = '';
 
 
 const stringarray = [
-      'cum',
       'The White Liquid?',
       'HE SAID THE WORD',
       'SIUUUU',
@@ -22,7 +21,7 @@ const stringarray = [
 
 
 client.on("message", msg => {
-  if (msg.content === "cum") {
+  if (msg.content === "Milk") {
     let randomNumber = Math.floor(Math.random()*stringarray.length);
     msg.reply(stringarray[randomNumber]);
   }
