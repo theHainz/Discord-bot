@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 const date = new Date();
-const TOKEN = '';
+const TOKEN = 'OTQ3OTg1NzI3MTg5Mjk1MTM1.GqQoeo.eYa5qIHnypZK4pioLX1z5kLLhuyFFVm69VLAIc';
 
  client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`)
@@ -27,22 +27,28 @@ const TOKEN = '';
     }
   })
 
-
-  let day = date.getDay();
-  let month = date.getMonth();
-  let hour = date.getHours();
-  const theday = 25;
-  const themonth = 6;
-
   client.on("message", msg => {
     if (msg.content === "#Countdown") {
-      if (day >= 25 && month == 6 || day == 31 && month == 8){
-        msg.reply("No More School!");
-      }
-      else {
-        
-      }
-    }
+      
+    let countDownDate = new Date("Jun 25, 2022 12:30:00").getTime();
+
+  // Get today's date and time
+  let now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  let distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+  msg.reply(`it's ${seconds} Seconds, ${minutes} Minutes, ${hours} Hours, ${days} Days Before School Ends`);
+
+  }
+
+  
   })
 
 client.login(TOKEN)
