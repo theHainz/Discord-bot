@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 const date = new Date();
-const TOKEN = 'OTQ3OTg1NzI3MTg5Mjk1MTM1.GqQoeo.eYa5qIHnypZK4pioLX1z5kLLhuyFFVm69VLAIc';
+const TOKEN = '';
 
  client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`)
