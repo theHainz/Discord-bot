@@ -2,13 +2,12 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 const date = new Date();
-const TOKEN = '';
 
  client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`)
 })
 
-  const stringarray = [
+  const Answers = [
         'The White Liquid?',
         'HE SAID THE WORD',
         'SIUUUU',
@@ -22,8 +21,15 @@ const TOKEN = '';
 
   client.on("message", msg => {
     if (msg.content === "#Cum") {
-      let randomNumber = Math.floor(Math.random()*stringarray.length);
-      msg.reply(stringarray[randomNumber]);
+      let randomNumber = Math.floor(Math.random()*Answers.length);
+      msg.reply(Answers[randomNumber]);
+    }
+  })
+
+  client.on("message", msg => {
+    if (msg.content === "#cock") {
+      let randomNumber = Math.floor(Math.random()*Answers.length);
+      msg.reply(Answers[randomNumber]);
     }
   })
 
@@ -51,4 +57,4 @@ const TOKEN = '';
   
   })
 
-client.login(TOKEN)
+client.login(process.env.TOKEN)
