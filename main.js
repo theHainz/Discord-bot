@@ -2,13 +2,12 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 const date = new Date();
-const TOKEN = 'OTQ3OTg1NzI3MTg5Mjk1MTM1.GqQoeo.eYa5qIHnypZK4pioLX1z5kLLhuyFFVm69VLAIc';
 
  client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`)
 })
 
-  const stringarray = [
+  const Answers = [
         'The White Liquid?',
         'HE SAID THE WORD',
         'SIUUUU',
@@ -22,15 +21,22 @@ const TOKEN = 'OTQ3OTg1NzI3MTg5Mjk1MTM1.GqQoeo.eYa5qIHnypZK4pioLX1z5kLLhuyFFVm69
 
   client.on("message", msg => {
     if (msg.content === "#Cum") {
-      let randomNumber = Math.floor(Math.random()*stringarray.length);
-      msg.reply(stringarray[randomNumber]);
+      let randomNumber = Math.floor(Math.random()*Answers.length);
+      msg.reply(Answers[randomNumber]);
+    }
+  })
+
+  client.on("message", msg => {
+    if (msg.content === "#cock") {
+      let randomNumber = Math.floor(Math.random()*Answers.length);
+      msg.reply(Answers[randomNumber]);
     }
   })
 
   client.on("message", msg => {
     if (msg.content === "#Countdown") {
       
-    let countDownDate = new Date("Jun 25, 2022 12:30:00").getTime();
+    let countDownDate = new Date("Jun 24, 2022 12:30:00").getTime();
 
   // Get today's date and time
   let now = new Date().getTime();
