@@ -36,7 +36,7 @@ const date = new Date();
   client.on("message", msg => {
     if (msg.content === "#Countdown") {
       
-    let countDownDate = new Date("Jun 24, 2022 12:30:00").getTime();
+    let countDownDate = new Date("Jun 25, 2022 12:30:00").getTime();
 
   // Get today's date and time
   let now = new Date().getTime();
@@ -57,4 +57,4 @@ const date = new Date();
   
   })
 
-client.login(TOKEN)
+client.login(process.env.TOKEN)
