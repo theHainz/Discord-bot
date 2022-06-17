@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 
+const token = '';
 const client = new Discord.Client();
 const date = new Date();
 
@@ -20,21 +21,14 @@ const date = new Date();
 
 
   client.on("message", msg => {
-    if (msg.content === "#Cum") {
+    if (msg.content === "!Cum" || msg.content === "!cock") {
       let randomNumber = Math.floor(Math.random()*Answers.length);
       msg.reply(Answers[randomNumber]);
     }
   })
 
   client.on("message", msg => {
-    if (msg.content === "#cock") {
-      let randomNumber = Math.floor(Math.random()*Answers.length);
-      msg.reply(Answers[randomNumber]);
-    }
-  })
-
-  client.on("message", msg => {
-    if (msg.content === "#Countdown") {
+    if (msg.content === "!Countdown") {
       
     let countDownDate = new Date("Jun 25, 2022 12:30:00").getTime();
 
@@ -53,8 +47,6 @@ const date = new Date();
   msg.reply(`it's ${seconds} Seconds, ${minutes} Minutes, ${hours} Hours, ${days} Days Before School Ends`);
 
   }
-
-  
   })
 
-client.login(process.env.TOKEN)
+client.login(token)
